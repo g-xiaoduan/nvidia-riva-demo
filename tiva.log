@@ -1,0 +1,76 @@
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+| server_id                        | triton                                                                                                                                                                                                          |
+
+| server_version                   | 2.54.0                                                                                                                                                                                                          |
+
+| server_extensions                | classification sequence model_repository model_repository(unload_dependents) schedule_policy model_configuration system_shared_memory cuda_shared_memory binary_tensor_data parameters statistics trace logging |
+
+| model_repository_path[0]         | /data/models                                                                                                                                                                                                    |
+
+| model_control_mode               | MODE_NONE                                                                                                                                                                                                       |
+
+| strict_model_config              | 1                                                                                                                                                                                                               |
+
+| model_config_name                |                                                                                                                                                                                                                 |
+
+| rate_limit                       | OFF                                                                                                                                                                                                             |
+
+| pinned_memory_pool_byte_size     | 268435456                                                                                                                                                                                                       |
+
+| cuda_memory_pool_byte_size{0}    | 1000000000                                                                                                                                                                                                      |
+
+| min_supported_compute_capability | 6.0                                                                                                                                                                                                             |
+
+| strict_readiness                 | 1                                                                                                                                                                                                               |
+
+| exit_timeout                     | 30                                                                                                                                                                                                              |
+
+| cache_enabled                    | 0                                                                                                                                                                                                               |
+
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+I0812 06:08:49.257375 140 grpc_server.cc:2558] "Started GRPCInferenceService at 0.0.0.0:8001"
+
+I0812 06:08:49.257541 140 http_server.cc:4725] "Started HTTPService at 0.0.0.0:8000"
+
+I0812 06:08:49.299963 140 http_server.cc:358] "Started Metrics Service at 0.0.0.0:8002"
+
+  > Triton server is ready...
+
+Starting Riva HTTP server...
+
+Starting Riva GRPC server...
+
+[2025-08-12 06:08:49 +0000] [314] [INFO] Starting gunicorn 23.0.0
+
+[2025-08-12 06:08:49 +0000] [314] [INFO] Listening at: http://0.0.0.0:50000⁠ (314)
+
+[2025-08-12 06:08:49 +0000] [314] [INFO] Using worker: uvicorn.workers.UvicornWorker
+
+[2025-08-12 06:08:49 +0000] [317] [INFO] Booting worker with pid: 317
+
+I0812 06:08:50.230309   313 riva_server.cc:127] Using Insecure Server Credentials
+
+I0812 06:08:50.234092   313 model_registry.cc:144] Successfully registered: conformer-en-US-asr-offline-asr-bls-ensemble for ASR Triton URI: localhost:8001
+
+I0812 06:08:50.234922   313 model_registry.cc:144] Successfully registered: conformer-en-US-asr-streaming-asr-bls-ensemble for ASR Triton URI: localhost:8001
+
+I0812 06:08:50.247906   313 model_registry.cc:144] Successfully registered: riva-punctuation-en-US for NLP Triton URI: localhost:8001
+
+I0812 06:08:50.260939   313 model_registry.cc:144] Successfully registered: riva-punctuation-en-US for NLP Triton URI: localhost:8001
+
+I0812 06:08:50.269018   313 model_registry.cc:144] Successfully registered: fastpitch_hifigan_ensemble-English-US for TTS Triton URI: localhost:8001
+
+I0812 06:08:50.275539   313 grpc_riva_tts.cc:801] TTS->RivaSynthesisConfig:magpie_tts_ensemble-Magpie-Multilingual:
+
+I0812 06:08:50.285931   313 riva_server.cc:192] Riva Conversational AI Server listening on 0.0.0.0:50051
+
+W0812 06:08:50.285953   313 stats_reporter.cc:41] No API key provided. Stats reporting disabled.
+
+[2025-08-12 06:08:50 +0000] [317] [INFO] Started server process [317]
+
+[2025-08-12 06:08:50 +0000] [317] [INFO] Waiting for application startup.
+
+[2025-08-12 06:08:50 +0000] [317] [INFO] Application startup complete.
